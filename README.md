@@ -1,20 +1,45 @@
 # liquiddata
 Thoughts on Liquid Data
 
-## Notes dump from airplane flying back from Gaia-X Summit
-
-Layer 1: authorities, legal contract
-Layer 2: access control, theory of network, logging requirements 
-Layer 3: requirement models / consent languages 
-Layer 4: transport
-Layer 5: Basics, inception, change
-Layer 6: LRI matching 
-Layer 7: agreement, listening
-Layer 8: theory of mind, reasoning, evolution, 
-Layer 9: translation, lookalike sets, exhaustive lists / negative statements 
-Layer 10: CRDT, blockchain, write access 
-Layer 11: contradiction, conflict resolution 
-Layer 12: audit
+## Layer 1
+### authorities
+### legal contract
+## Layer 2
+### access control
+### theory of network
+### logging requirements 
+## Layer 3
+### requirement models
+### consent languages 
+## Layer 4
+### transport
+## Layer 5
+### Basics
+### inception
+### change
+## Layer 6
+### LRI matching 
+## Layer 7
+### agreement
+### listening
+## Layer 8
+### theory of mind
+### reasoning
+### evolution
+## Layer 9
+### translation
+### lookalike sets
+### exhaustive lists
+### negative statements 
+## Layer 10
+### CRDT
+### blockchain
+### write access 
+## Layer 11
+### contradiction
+### conflict resolution 
+## Layer 12
+### audit
 
 Theory of network:
 It should be clear from the ruleset codified in the legal framework which authorities are allowed to read which quints when and under which conditions.
