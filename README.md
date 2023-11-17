@@ -1,4 +1,4 @@
-# Liquid Data
+# Liquid Data Spaces
 ### *a pluggable framework for data portability*
 
 
@@ -7,16 +7,28 @@ Data portability requires trust. Most Chief Information Officers (CIOs) are righ
 
 In order to build good data portability tools, we need to start with a good model of the landscape in which these tools will operate, to describe the current situation and contrast it with the desired situation, to see which tools could help us get there. The Liquid Data Framework therefore consists of a baseline model (describing the context in which data portability tools operate), a set of functional components that are defined in terms of their requirements, and a set of pluggable implementations of such components.
 
-## Liquid Data Principles
-1) **Federation** (Authorities and Communication): We model the world as a number of authorities, connected through neighbour-to-neighbour messaging connections (for instance REST APIs from which information can be pulled, or WebSockets through which information can be pushed). There is no central point in this network - the architecture is similar to that of the internet itself.
+## Requirements
 
-2) **Technical Sovereignty**: Each authority is entirely sovereign in how they design their internal database and how they operate it.
+1) **Technical Sovereignty**: Each authority is entirely sovereign in how they design their internal database and how they operate it. This differs slightly from 'Data Sovereignty', which according to the example on page 10 of [Design Principles for Data Spaces](https://zenodo.org/records/5105744) is more similar to 'Least Authority'.
+2) **Trust Anchors**: Before even considering to share data with each other, authorities need a reason to trust each other, for instance a legal contract.
+3) **Federation** (Authorities and Communication): We model the world as a number of authorities, connected through neighbour-to-neighbour messaging connections (for instance REST APIs from which information can be pulled, or WebSockets through which information can be pushed). There is no central point in this network - the architecture is similar to that of the internet itself.
+4) **Polyglot World**: We reject tools that require a technological monoculture in order to achieve their value. This is similar to principle 2, but applied to the connections instead of to the internals of each authorities.
+5) **Least Authority**: Don't overshare. For instance, many transactions between commercial businesses happen under NDA so these should not be posted to a public ledger. Similarly for personal identifiable data. And similarly, minimize the extent to which messages from other authorities can trigger changes in your own system (what we traditionally call write access).
+6) **Multiple Opinions** (Statements and Assets): A statement says something about the outside world and can be false. An asset is valuable in itself, for instance a drawing. Statements can refer to assets and to other statements Assets can contain representations of statements and other assets. You never know for sure if a statement is true.
+7) **Audit**: For the successful operation of a data portability network, including cooperative investigation of data leaks and data corruptions when they happen, it would help a lot if each authority would keep good auditable logs.
 
-3) **Polyglot World**: We reject tools that require a technological monoculture in order to achieve their value. This is similar to principle 2, but applied to the connections instead of to the internals of each authorities.
+## Liquid Data Spaces Design
 
-4) **Local Resource Identifiers**: We do not impose any particular way of assigning identifiers when serialising statements into assets. This means that the sender's identifiers will have to be mapped onto the receiver's identifiers, and the case where both sender and receiver use the same URL for the same object is considered a coincidence. This also follows from princples 2 and 3.
+### Local Resource Identifiers
+We do not impose any particular way of assigning identifiers when serialising statements into assets. This means that the sender's identifiers will have to be mapped onto the receiver's identifiers, and the case where both sender and receiver use the same URL for the same object is considered a coincidence. This also follows from the 'Technical Sovereignty' and 'Polyglot World' requirements.
 
-5) **Multiple World Views** (Statements and Assets): A statement says something about the outside world and can be false. An asset is valuable in itself, for instance a drawing. Statements can refer to assets and to other statements Assets can contain representations of statements and other assets. You never know for sure if a statement is true.
+### Rethink read and write access
+In normal API access, the audience and the API client coincide.
+But with multi-hop sharing, there is a separation between the audience of data and the trusted intermediaries.
+Similarly, you can always write in your own copy of the data, but whether some "write" message you send to another authority ends up changing their world view is more complex than just writing directly into their database.
+
+### Definition of Purpose
+Following from the requirement of Least Authority, if data can for instance be used for a specific purpose but not reshared, or not kept on file for longer than necessary, it would be good to include a machine-readable statement about this, using something like XACML or ODRL, and shipping this along with the data.
 
 ## The rest of this is mainly random notes, still to be organised:
 
