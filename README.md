@@ -1,8 +1,9 @@
 # Liquid Data
 ### *a pluggable framework for data portability*
 
+
 ## Framing
-Data portability requires trust. Most Chief Information Officers (CIOs) are rightfully conservative in allowing data to enter and leave the firewalls of their organisations. At the same time, if data is allowed to flow to the right place in an automated way, all parties involved, and the economy as whole, gains a lot of efficiency and additional value production. It is therefore really great that the EU sponsors open source data portability technology projects with hundreds of millions of euros through programs such as Smart Middleware Platform for Cloud-to-Edge Federations (SiMPL) and Next Generation Internet (NGI). Our challenge as technologists is to offer the European economy the best possible open source technology in return for this generous funding.
+Data portability requires trust. Most Chief Information Officers (CIOs) are rightfully conservative in allowing data to enter and leave the firewalls of their organisations. At the same time, if data is allowed to flow to the right place in an automated way, all parties involved, and the economy as whole, gain a lot of efficiency and additional value production. It is therefore really great that the EU sponsors open source data space technology projects with hundreds of millions of euros through programs such as Smart Middleware Platform for Cloud-to-Edge Federations (SiMPL) and Next Generation Internet (NGI). Our challenge as technologists is to offer the European economy the best possible open source technology in return for this generous funding.
 
 In order to build good data portability tools, we need to start with a good model of the landscape in which these tools will operate, to describe the current situation and contrast it with the desired situation, to see which tools could help us get there. The Liquid Data Framework therefore consists of a baseline model (describing the context in which data portability tools operate), a set of functional components that are defined in terms of their requirements, and a set of pluggable implementations of such components.
 
@@ -11,11 +12,11 @@ In order to build good data portability tools, we need to start with a good mode
 
 2) **Technical Sovereignty**: Each authority is entirely sovereign in how they design their internal database and how they operate it.
 
-3) **Heterogenious Connections**: We reject tools that require a technological monoculture in order to achieve their value. This is similar to principle 2, but applied to the connections instead of to the internals of each authorities.
+3) **Polyglot World**: We reject tools that require a technological monoculture in order to achieve their value. This is similar to principle 2, but applied to the connections instead of to the internals of each authorities.
 
-4) **Talk about the World** (Statements and Assets): A statement says something about the outside world and can be false. An asset is valuable in itself, for instance a drawing. Statements can refer to assets and to other statements Assets can contain representations of statements and other assets. You never know for sure if a statement is true.
+4) **Local Resource Identifiers**: We do not impose any particular way of assigning identifiers when serialising statements into assets. This means that the sender's identifiers will have to be mapped onto the receiver's identifiers, and the case where both sender and receiver use the same URL for the same object is considered a coincidence. This also follows from princples 2 and 3.
 
-5) **Local Resource Identifiers**: We do not impose any particular way of assigning identifiers when serialising statements into assets. This means that the sender's identifiers will have to be mapped onto the receiver's identifiers, and the case where both sender and receiver use the same URL for the same object is considered a coincidence. This also follows from princples 2 and 3.
+5) **Multiple World Views** (Statements and Assets): A statement says something about the outside world and can be false. An asset is valuable in itself, for instance a drawing. Statements can refer to assets and to other statements Assets can contain representations of statements and other assets. You never know for sure if a statement is true.
 
 ## The rest of this is mainly random notes, still to be organised:
 
